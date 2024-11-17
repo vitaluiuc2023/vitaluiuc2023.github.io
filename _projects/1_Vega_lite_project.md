@@ -1,7 +1,7 @@
 ---
 name: U-C Area Building Sprawl Over The Years Project
 tools: [Python, HTML, vega-lite]
-image: assets/pngs/cars.png
+image: assets/pngs/uc-project.png
 description: These are two visualizations that showcase the sprawl of buildings within the U-C area over the last 130 years, as well as their respective square footage
 custom_js:
   - vega.min
