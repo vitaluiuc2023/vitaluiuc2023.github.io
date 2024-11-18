@@ -42,7 +42,9 @@ Having this visualization is important because it showcases a determined trend w
 
 <vegachart schema-url="{{ site.baseurl }}/assets/json/line_chart.json" style="width: 100%"></vegachart>
 
-In overall, I think both of these visualizations contain information that complement each other, giving an impactful insight into the growth of Urbana-Champaign as an area over the last 100 plus years. The interactivity allows for a shift in colors if the differentiation between different types of buildings is hard to establish, as well as a 10 year range that facilitates a closer look within given timeframes without making the plot too overwhelming with every single year listed on there. 
+In overall, I think both of these visualizations contain information that complement each other, giving an impactful insight into the growth of Urbana-Champaign as an area over the last 100 plus years. The interactivity allows for a shift in colors if the differentiation between different types of buildings is hard to establish, as well as a 10 year range that facilitates a closer look within given timeframes without making the plot too overwhelming with every single year listed on there.
+
+ As far as overlap with Homework #5 goes, I believe the most I have done is reutilize the group approach for my data transformation. Other than that, I tried to be original with this submission for both plots and don't believe it overlaps massively (if at all)
 
 ## Search The Data & Methods
 
