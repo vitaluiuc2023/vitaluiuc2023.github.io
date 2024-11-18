@@ -1,0 +1,98 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Buildings Constructed In U-C Area By Year Constructed And Their Use",
+  "data": {
+    "url": "https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/main/building_inventory.csv"
+  },
+  "transform": [
+    {"filter": "datum.City === 'Urbana' || datum.City === 'Champaign'"},
+    {"calculate": "year(datum['Year Constructed'])", "as": "Year"}
+  ],
+  "params": [
+    {
+      "name": "YearRange",
+      "value": [1870, 1880],
+      "bind": {
+        "input": "select",
+        "options": [
+          [1870, 1879],
+          [1880, 1889],
+          [1890, 1899],
+          [1900, 1909],
+          [1910, 1919],
+          [1920, 1929],
+          [1930, 1939],
+          [1940, 1949],
+          [1950, 1959],
+          [1960, 1969],
+          [1970, 1979],
+          [1980, 1989],
+          [1990, 1999],
+          [2000, 2009],
+          [2010, 2019]
+        ],
+        "name": "Year Range: "
+      }
+    },
+    {
+      "name": "ColorScheme",
+      "value": "plasma",
+      "bind": {
+        "input": "select",
+        "options": [
+          "darkred",
+          "darkgold",
+          "darkgreen",
+          "plasma",
+          "inferno",
+          "magma"
+        ],
+        "name": "Color Scheme: "
+      }
+    }
+  ],
+  "vconcat": [
+    {
+      "transform": [
+        {"filter": "datum.Year >= YearRange[0] && datum.Year < YearRange[1]"}
+      ],
+      "width": 600,
+      "height": 400,
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal",
+          "title": "Year",
+          "axis": {"labelAngle": -45}
+        },
+        "y": {
+          "aggregate": "count",
+          "type": "quantitative",
+          "title": "Total Buildings"
+        },
+        "color": {
+          "field": "Usage Description",
+          "type": "nominal",
+          "title": "Use Description",
+          "scale": {"scheme": {"expr": "ColorScheme"}}
+        },
+        "tooltip": [
+          {"field": "Year", "type": "ordinal", "title": "Year"},
+          {
+            "aggregate": "count",
+            "type": "quantitative",
+            "title": "Total Buildings"
+          },
+          {
+            "field": "Usage Description",
+            "type": "nominal",
+            "title": "Usage Description"
+          }
+        ]
+      },
+      "title": "Buildings Constructed In U-C Area By Year Constructed And Their Use"
+    }
+  ],
+  "config": {"facet": {"spacing": 10}}
+}
