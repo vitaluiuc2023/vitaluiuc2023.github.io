@@ -48,6 +48,6 @@ In overall, I think both of these visualizations contain information that comple
 </div>
 
 <div class="right">
-{% include elements/button.html link="https://github.com/jnaiman/online_cv_public/blob/main/python_notebooks/test_generate_plots.ipynb" text="The Analysis" %}
+{% include elements/button.html link="https://github.com/vitaluiuc2023/vitaluiuc2023.github.io/blob/main/python_notebooks/analysis_main.ipynb" text="The Analysis" %}
 </div>
 
